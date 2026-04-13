@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PBV Finance · AI CFO Agents — Governance, Variance, Reconciliation for GCC</title>
+<meta name="description" content="10 AI agent workflows for CFOs. SAP-native. GCC-compliant. 15-min governance assessment replaces 6-week Big 4 engagement. Privacy-first.">
+<meta property="og:title" content="PBV Finance · AI CFO Agents">
+<meta property="og:description" content="The only SAP-native AI Governance + Automation system built for GCC CFOs. 90% less than Big 4.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"PBV Finance","description":"AI-powered CFO agent workflows for GCC mid-market companies.","founder":{"@type":"Person","name":"Bhargav Venkatesh"},"areaServed":["UAE","Saudi Arabia","Qatar","India","United Kingdom"]}
+</script>
+<style>
+:root{--bg:#0a0f1a;--card:#111827;--gold:#d4a846;--gold-d:#b8922e;--gg:rgba(212,168,70,.12);--gg2:rgba(212,168,70,.25);--t1:#e8e6e1;--t2:#9ca3af;--t3:#6b7280;--br:rgba(255,255,255,.06);--grn:#34d399;--serif:'DM Serif Display',Georgia,serif;--sans:'Instrument Sans',system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--t1);line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.c{max-width:1080px;margin:0 auto;padding:0 24px}
+.gold{color:var(--gold)}
+.tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gg2);padding:5px 14px;border-radius:100px;background:var(--gg)}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,15,26,.88);backdrop-filter:blur(24px);border-bottom:1px solid var(--br);padding:14px 0}
+nav .c{display:flex;justify-content:space-between;align-items:center}
+.nl{font-family:var(--serif);font-size:18px;color:var(--t1);text-decoration:none;display:flex;align-items:baseline;gap:8px}
+.nl span{color:var(--gold)}
+.nl-sub{font-family:var(--sans);font-size:11px;color:var(--t3);font-weight:500;letter-spacing:.5px;text-transform:uppercase}
+.nk{display:flex;gap:24px;align-items:center}
+.nk a{font-size:13px;color:var(--t2);text-decoration:none;font-weight:500;transition:color .2s}
+.nk a:hover{color:var(--t1)}
+.nc{background:var(--gold)!important;color:var(--bg)!important;padding:8px 18px!important;border-radius:6px;font-weight:600!important;transition:background .2s!important}
+.nc:hover{background:var(--gold-d)!important}
+
+/* Buttons */
+.bp{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--bg);padding:14px 30px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;border:none;cursor:pointer;transition:all .2s}
+.bp:hover{background:var(--gold-d);transform:translateY(-1px)}
+.bs{display:inline-flex;align-items:center;gap:8px;background:0 0;color:var(--t1);padding:14px 30px;border-radius:8px;font-weight:500;font-size:15px;text-decoration:none;border:1px solid rgba(255,255,255,.15);transition:all .2s}
+.bs:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.03)}
+
+/* Section */
+section{padding:100px 0}
+.st{margin-bottom:16px}
+.sh{font-family:var(--serif);font-size:clamp(28px,4vw,40px);margin-bottom:16px;font-weight:400;line-height:1.2}
+.sd{font-size:16px;color:var(--t2);max-width:600px;margin-bottom:48px;line-height:1.7}
+.sep{border-top:1px solid var(--br)}
+
+/* Hero */
+.hero{padding:150px 0 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,70,.07) 0%,transparent 70%)}
+.ht{display:inline-flex;align-items:center;gap:8px;background:var(--gg);border:1px solid var(--gg2);padding:6px 16px;border-radius:100px;margin-bottom:24px;font-size:12px;font-weight:600;color:var(--gold)}
+.hd{width:7px;height:7px;border-radius:50%;background:var(--grn);animation:pd 2s ease-in-out infinite}
+@keyframes pd{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:var(--serif);font-size:clamp(34px,5.2vw,52px);line-height:1.14;margin-bottom:20px;max-width:680px;font-weight:400}
+.hsub{font-size:17px;color:var(--t2);max-width:560px;margin-bottom:36px;line-height:1.7}
+.hcta{display:flex;gap:14px;flex-wrap:wrap}
+.ts{margin-top:48px;display:flex;flex-wrap:wrap;gap:14px}
+.tb{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--t3);font-weight:500;padding:6px 14px;border-radius:6px;border:1px solid var(--br);background:rgba(255,255,255,.02)}
+.td{width:6px;height:6px;border-radius:50%}
+.tdg{background:var(--gold)}.tdn{background:var(--grn)}
+
+/* Deep workflow card */
+.dw{background:var(--card);border:1px solid var(--br);border-radius:16px;padding:40px;margin-bottom:24px;position:relative;overflow:hidden;transition:border-color .3s}
+.dw:hover{border-color:var(--gg2)}
+.dw.flagship{border-color:var(--gold);background:linear-gradient(170deg,var(--card) 0%,rgba(212,168,70,.04) 100%)}
+.dw-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:4px;margin-bottom:16px}
+.dw-tag-gold{color:var(--bg);background:var(--gold)}
+.dw-tag-green{color:#065f46;background:rgba(52,211,153,.2)}
+.dw-tag-blue{color:#1e40af;background:rgba(59,130,246,.15)}
+.dw-title{font-family:var(--serif);font-size:clamp(22px,3vw,30px);margin-bottom:12px;font-weight:400;line-height:1.25}
+.dw-sub{font-size:15px;color:var(--t2);max-width:700px;line-height:1.7;margin-bottom:24px}
+.dw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px}
+.dw-box{background:rgba(255,255,255,.03);border:1px solid var(--br);border-radius:10px;padding:16px}
+.dw-box h4{font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.dw-box p{font-size:13px;color:var(--t2);line-height:1.6}
+.dw-ref{font-size:13px;color:var(--t3);margin-top:20px;padding-top:16px;border-top:1px solid var(--br);line-height:1.7;font-style:italic}
+.dw-cta{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.dw-stats{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:20px}
+.dw-stat-n{font-family:var(--serif);font-size:26px;color:var(--gold)}
+.dw-stat-l{font-size:12px;color:var(--t3);margin-top:2px}
+
+/* Governance deliverables */
+.gov-del{counter-reset:gd;margin-bottom:28px}
+.gov-del-title{font-size:14px;font-weight:600;color:var(--gold);margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
+.gov-del-list{display:grid;grid-template-columns:1fr;gap:0}
+.gov-del-item{counter-increment:gd;display:grid;grid-template-columns:32px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--br);align-items:start}
+.gov-del-item:last-child{border:none}
+.gov-del-num{font-family:var(--serif);font-size:16px;color:var(--gold);opacity:.6;padding-top:1px}
+.gov-del-num::before{content:counter(gd,decimal-leading-zero)}
+.gov-del-name{font-size:14px;font-weight:600;margin-bottom:2px}
+.gov-del-desc{font-size:12px;color:var(--t3);line-height:1.5}
+.gov-app{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:24px}
+.gov-app-item{background:rgba(255,255,255,.03);border:1px solid var(--br);border-radius:8px;padding:12px;text-align:center}
+.gov-app-letter{font-family:var(--serif);font-size:20px;color:var(--gold);opacity:.5;margin-bottom:4px}
+.gov-app-name{font-size:12px;font-weight:600;line-height:1.4}
+.gov-app-sub{font-size:11px;color:var(--t3);margin-top:2px}
+.gov-two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:768px){.gov-two{grid-template-columns:1fr}}
+
+/* Video placeholder */
+.vid-spot{background:rgba(255,255,255,.03);border:2px dashed rgba(255,255,255,.1);border-radius:12px;padding:40px 20px;text-align:center;margin-top:20px}
+.vid-spot p{font-size:14px;color:var(--t3)}
+.vid-spot code{font-size:12px;color:var(--t2);background:rgba(255,255,255,.06);padding:2px 8px;border-radius:4px;display:inline-block;margin-top:8px}
+
+/* Market Reality */
+.mr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.mr-card{background:var(--card);border:1px solid var(--br);border-radius:12px;padding:28px}
+.mr-card h3{font-size:16px;font-weight:600;margin-bottom:10px}
+.mr-card p{font-size:14px;color:var(--t2);line-height:1.65}
+.mr-num{font-family:var(--serif);font-size:32px;color:var(--gold);margin-bottom:8px}
+
+/* Workflow mini grid */
+.wg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:48px}
+.wi{background:var(--card);border:1px solid var(--br);border-radius:10px;padding:18px;position:relative;transition:all .25s}
+.wi:hover{border-color:var(--gg2);transform:translateY(-2px)}
+.wn{font-family:var(--serif);font-size:20px;color:var(--gold);opacity:.4;position:absolute;top:12px;right:14px}
+.wna{font-size:14px;font-weight:600;margin-bottom:4px}
+.ws{font-size:11px;font-weight:600;letter-spacing:.5px}
+.wsl{color:var(--grn)}.wsb{color:var(--gold)}.wsp{color:var(--t3)}
+
+/* Pricing */
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.pc{background:var(--card);border:1px solid var(--br);border-radius:14px;padding:32px 28px;position:relative;transition:all .3s}
+.pc:hover{border-color:var(--gg2)}
+.pc.ft{border-color:var(--gold);background:linear-gradient(170deg,var(--card) 0%,rgba(212,168,70,.04) 100%)}
+.pc.ft::after{content:'Start here';position:absolute;top:-11px;right:20px;font-size:11px;font-weight:600;letter-spacing:.5px;background:var(--gold);color:var(--bg);padding:3px 12px;border-radius:100px;text-transform:uppercase}
+.pt{font-size:12px;font-weight:600;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.pa{font-family:var(--serif);font-size:36px;margin-bottom:4px}
+.pp{font-size:13px;color:var(--t3);margin-bottom:16px}
+.pf{list-style:none;margin-bottom:24px}
+.pf li{font-size:13px;color:var(--t2);padding:5px 0 5px 20px;position:relative}
+.pf li::before{content:'';position:absolute;left:0;top:11px;width:8px;height:8px;border-radius:50%;background:var(--gold);opacity:.5}
+.pb{display:block;text-align:center;padding:12px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;transition:all .2s}
+.pbp{background:var(--gold);color:var(--bg)}.pbp:hover{background:var(--gold-d)}
+.pbo{border:1px solid rgba(255,255,255,.15);color:var(--t1);background:0 0}.pbo:hover{border-color:rgba(255,255,255,.3)}
+.cb{margin-top:48px;background:var(--card);border:1px solid var(--br);border-radius:12px;padding:28px 32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;text-align:center}
+.cc h4{font-size:14px;font-weight:600;margin-bottom:4px}
+.cp{font-family:var(--serif);font-size:24px;margin-bottom:2px}
+.cn{font-size:12px;color:var(--t3)}
+.cy{color:var(--gold)}.cy .cp{color:var(--gold)}
+
+/* Diff */
+.dg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.di{display:flex;gap:16px;padding:24px;background:var(--card);border:1px solid var(--br);border-radius:12px}
+.dm{flex-shrink:0;width:40px;height:40px;border-radius:8px;background:var(--gg);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px}
+.di h3{font-size:15px;font-weight:600;margin-bottom:4px}
+.di p{font-size:13px;color:var(--t2);line-height:1.6}
+
+/* About */
+.ac{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.ac p{font-size:15px;color:var(--t2);margin-bottom:16px;line-height:1.7}
+.cg{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.cb2{font-size:12px;font-weight:600;padding:6px 14px;border:1px solid var(--br);border-radius:6px;color:var(--t2)}
+.as{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.asi{background:var(--card);border:1px solid var(--br);border-radius:10px;padding:20px}
+.asn{font-family:var(--serif);font-size:28px;color:var(--gold)}
+.asl{font-size:13px;color:var(--t3);margin-top:4px}
+
+/* CTA */
+.cta{border-top:1px solid var(--br);text-align:center;padding:120px 0;position:relative}
+.cta::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(212,168,70,.06) 0%,transparent 70%)}
+.cta h2{font-family:var(--serif);font-size:clamp(32px,5vw,48px);margin-bottom:16px;font-weight:400}
+.cta p{font-size:17px;color:var(--t2);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+.cd{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cs{font-size:13px;color:var(--t3);margin-top:20px}
+
+footer{border-top:1px solid var(--br);padding:40px 0;text-align:center}
+footer p{font-size:13px;color:var(--t3)}
+footer a{color:var(--t2);text-decoration:none}
+footer a:hover{color:var(--gold)}
+
+@keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.ht,.hero h1,.hsub,.hcta,.ts{animation:fu .7s ease-out both}
+.ht{animation-delay:.05s}.hero h1{animation-delay:.15s}.hsub{animation-delay:.25s}.hcta{animation-delay:.35s}.ts{animation-delay:.5s}
+
+@media(max-width:768px){
+.nk a:not(.nc){display:none}.ts{gap:10px}.ac{grid-template-columns:1fr}
+.cb{grid-template-columns:1fr;gap:16px}.hero h1{max-width:100%}
+.dw{padding:24px 20px}.dw-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav><div class="c">
+<a href="#" class="nl">PBV <span>Finance</span> <span class="nl-sub">AI CFO Agents</span></a>
+<div class="nk">
+<a href="#governance">Governance</a>
+<a href="#workflows">Workflows</a>
+<a href="#pricing">Pricing</a>
+<a href="#about">About</a>
+<a href="/cdn-cgi/l/email-protection#d4b6bcb5a6b3b5a2a4b1a6b5b9edec94b3b9b5bdb8fab7bbb9" class="nc">Free diagnostic</a>
+</div>
+</div></nav>
+
+<!-- Hero -->
+<section class="hero"><div class="c">
+<div class="ht"><span class="hd"></span>AI Governance Suite — live now</div>
+<h1>Your CFO office.<br>Now runs on <span class="gold">15-minute agents.</span></h1>
+<p class="hsub">The only SAP-native AI agent system built for GCC CFOs. Governance assessments that replace 6-week Big 4 engagements. Variance analysis that finds what 45 hours of manual work misses. Reconciliation that auto-matches 95%+ of transactions. All privacy-first — your data never leaves your network.</p>
+<div class="hcta">
+<a href="/cdn-cgi/l/email-protection#0e6c666f7c696f787e6b7c6f6337364e69636f6762206d6163317d7b6c646b6d7a334961786b7c606f606d6b2b3c3e4f7d7d6b7d7d636b607a" class="bp">Get 15-min Governance Assessment</a>
+<a href="#market" class="bs">See the research</a>
+</div>
+<div class="ts">
+<div class="tb"><span class="td tdg"></span>SAP S/4HANA · ECC · FICO</div>
+<div class="tb"><span class="td tdg"></span>UAE · KSA · Qatar · India · UK</div>
+<div class="tb"><span class="td tdn"></span>PDPL · CBUAE · ZATCA · KSA PDPL</div>
+<div class="tb"><span class="td tdn"></span>100% local processing available</div>
+</div>
+</div></section>
+
+<!-- Market Reality -->
+<section class="sep" id="market"><div class="c">
+<span class="tag st">The research</span>
+<h2 class="sh">What we found analyzing 40+ enterprise AI deployments</h2>
+<p class="sd">We studied how Dell, Adobe, HPE, Alphabet, and BlackLine are deploying AI agents across their finance functions. The pattern is clear — and most mid-market companies are 3 years behind.</p>
+<div class="mr-grid">
+<div class="mr-card">
+<div class="mr-num">93%</div>
+<h3>of finance teams are failing at AI governance</h3>
+<p>Gartner 2026. They're using AI daily but have no policies, no audit trails, no regulatory compliance framework. Boards are asking questions nobody can answer.</p>
+</div>
+<div class="mr-card">
+<div class="mr-num">86%</div>
+<h3>have encountered hallucinated AI data</h3>
+<p>AI-generated financial numbers that were wrong. Without confidence scoring and human review gates, these errors reach board packs. Our agents tag every output as CALCULATED, DERIVED, or HYPOTHESIS.</p>
+</div>
+<div class="mr-card">
+<div class="mr-num">43 hrs</div>
+<h3>per month wasted on manual variance reports</h3>
+<p>For a 15-entity company running SAP. Copy data from FAGLL03H, paste into Excel, format, analyze, write memo, email CFO. Repeat for each entity. Our agent does this in 5 minutes with 24 data-driven insights.</p>
+</div>
+<div class="mr-card">
+<div class="mr-num">60-70%</div>
+<h3>of month-end close time is reconciliation</h3>
+<p>MIT/Stanford research. Bank recs, intercompany, AP/AR — all manual matching. BlackLine reports 621% ROI from automating this. Dell's CFO deployed agents specifically for reconciliation and journal entries.</p>
+</div>
+<div class="mr-card">
+<div class="mr-num">11,000</div>
+<h3>hours cut by Dell's CFO with AI agents</h3>
+<p>David Kennedy, CFO Dell, deployed agents for reconciliation, journal entries, digital twins, and sales CRM. But he spent 2 years on data foundation first. Most companies skip that step — we don't let you.</p>
+</div>
+<div class="mr-card">
+<div class="mr-num">2027</div>
+<h3>UAE PDPL compliance deadline approaching</h3>
+<p>CBUAE AI guidance went live February 2026. KSA PDPL and ZATCA e-invoicing are already enforced. Every GCC company using AI in finance needs a governance framework — yesterday, not tomorrow.</p>
+</div>
+</div>
+
+<div style="margin-top:48px;padding:28px;background:var(--card);border:1px solid var(--br);border-radius:12px">
+<p style="font-size:15px;color:var(--t2);line-height:1.7"><strong style="color:var(--gold)">The forward view: Agentic AI in finance (2026-2028)</strong><br>The shift is from AI as a research assistant to AI as an execution layer. Claude Opus 4.6 ships with 1M token context and Agent Teams for parallel task execution. MCP (Model Context Protocol) standardizes how agents connect to ERPs, GL systems, and AP platforms. Oracle NetSuite already exposed their AI Connector Service for MCP-compatible agents. HPE's CFO identified AR processing and forecasting as her top two agent priorities. The question is no longer whether to deploy agents — it's which workflows to hand off first and how to govern them.</p>
+</div>
+</div></section>
+
+<!-- Deep Workflow: Governance -->
+<section class="sep" id="governance"><div class="c">
+<span class="tag st">Flagship product</span>
+<h2 class="sh">AI Governance Suite v1.1</h2>
+
+<div class="dw flagship">
+<span class="dw-tag dw-tag-gold">Live — deployed</span>
+<h3 class="dw-title">The 15-minute assessment that replaces a 6-week Big 4 engagement</h3>
+<p class="dw-sub">93% of finance teams are using AI with zero governance framework. Boards are asking "who controls our AI?" and CFOs have no answer. Meanwhile, UAE PDPL, CBUAE guidance, and ZATCA requirements are already live. A Big 4 firm charges $25,000-$75,000 for a governance audit that takes 6-8 weeks. We generate a board-ready pack in 15 minutes — with article-level regulatory specificity, a risk register, RACI matrix, and 6 ready-to-adopt policy templates.</p>
+
+<div class="dw-grid">
+<div class="dw-box"><h4>The problem</h4><p>AI hallucinations in financial reports, no audit trail, no regulatory compliance, board asking questions nobody can answer. Generic frameworks don't cover GCC-specific regulations at article level. Big 4 charges $75K+ for what takes 6 weeks.</p></div>
+<div class="dw-box"><h4>Our solution</h4><p>60-question assessment → AI agent generates a 12-section board pack + 6 policy appendices. Maturity scoring, risk quantification in your currency, regulatory gap analysis across 5 GCC frameworks, and a 30-60-90 day roadmap that maps every gap to a PBV automation agent.</p></div>
+<div class="dw-box"><h4>Two paths compared</h4><p>Path A: Big 4 — $75K, 6 weeks, generic framework, annual refresh. Path B: PBV — $2,500, 15 minutes, article-level specificity, monthly monitoring, every gap linked to an automation pipeline. ROI calculated in your Executive Summary automatically.</p></div>
+<div class="dw-box"><h4>Who's doing this</h4><p>96% of CFOs rate human oversight of AI as critical (Journal of Accountancy, Feb 2026). Dell, HPE, Alphabet all have internal governance frameworks. Your mid-market company needs one too — but can't afford $75K and 6 weeks to get started.</p></div>
+</div>
+
+<!-- 12-section deliverables -->
+<div class="gov-two">
+<div>
+<div class="gov-del">
+<div class="gov-del-title">12-section board pack — generated in 15 minutes</div>
+<div class="gov-del-list">
+<div class="gov-del-item"><div class="gov-del-num"></div><div><div class="gov-del-name">Executive Summary + ROI Calculation</div><div class="gov-del-desc">Two-path comparison (Big 4 vs PBV), quantified risk exposure, cost-to-remediate, and projected ROI — all in your currency.</div></div></div>
+<div class="gov-del-item"><div class="gov-del-num"></div><div><div class="gov-del-name">Risk Register</div><div class="gov-del-desc">Every risk with probability × impact × financial exposure. PBV Solution column maps each risk to a specific agent workflow.</div></div></div>
+<div class="gov-del-item"><div class="gov-del-num"></div><div><div class="gov-del-name">Governance Gates Report Card</div><div class="gov-del-desc">3 gates evaluated: Data Governance, Model Governance, Decision Governance. Each scored PASS / PARTIAL / FAIL with evidence.</div></div></div>
+<div class="gov-del-item"><div class="gov-del-num"></div><div><div class="gov-del-name">Deployment Barriers Diagnosed</div><div class="gov-del-desc">Technical, organizational, and regulatory blockers identified. Only appears if barriers are flagged — no filler sections.</div></div></div>
+<div class="gov-del-item"><div class="gov-del-num"></div><div><div class="gov-del-name">Detailed Gap Analysis</div><div class="gov-del-desc">Every governance gap classified by automation potential: fully automatable, partially automatable, or requires human judgment.</div></div></div>
+<div class="gov-del-item"><div class="gov-del-num"></div><div><div class="gov-del-name">Regulatory Compliance Matrix</div><div class="gov-del-desc">UAE PDPL, CBUAE, ZATCA, KSA PDPL, QCB — article-level compliance status. Includes DIFC, ADGM, QFC, GIFT City free zones.</div></div></div>
+</div>
+</div>
+</div>
+<div>
+<div class="gov-del">
+<div class="gov-del-title" style="opacity:0">-</div>
+<div class="gov-del-list">
+<div class="gov-del-item"><div class="gov-del-num"></div><div><div class="gov-del-name">30-60-90 Day Roadmap</div><div class="gov-del-desc">Week 1-4 protocol with evidence milestones, anti-pattern warnings, and owner assignments. Not generic — specific to your assessment results.</div></div></div>
+<div class="gov-del-item"><div class="gov-del-num"></div><div><div class="gov-del-name">One-Sentence Brief</div><div class="gov-del-desc">Auto-generated starting point for your board: one sentence that captures your governance posture, biggest risk, and recommended first action.</div></div></div>
+<div class="gov-del-item"><div class="gov-del-num"></div><div><div class="gov-del-name">RACI Matrix</div><div class="gov-del-desc">Who is Responsible, Accountable, Consulted, Informed — for every remediation action. Includes a PBV Consultant column showing where we plug in.</div></div></div>
+<div class="gov-del-item"><div class="gov-del-num"></div><div><div class="gov-del-name">PBV Automation Pipeline</div><div class="gov-del-desc">5 PBV products (Variance, Reconciliation, Close, Working Capital, Dashboards) mapped to your specific gaps. Shows exactly which agent solves which problem.</div></div></div>
+<div class="gov-del-item"><div class="gov-del-num"></div><div><div class="gov-del-name">Finance AI Task Map</div><div class="gov-del-desc">Reference appendix showing every finance task, its current state (manual/semi-auto/auto), and its target state with PBV agents.</div></div></div>
+<div class="gov-del-item"><div class="gov-del-num"></div><div><div class="gov-del-name">72-Hour Action Plan</div><div class="gov-del-desc">What to do in the next 3 days: immediate wins, quick policy adoptions, and stakeholder communications. No analysis paralysis — action from day one.</div></div></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 6 Policy Appendices -->
+<div style="margin-top:8px">
+<div class="gov-del-title">+ 6 policy templates (appendices A-F) — ready to adopt</div>
+<div class="gov-app">
+<div class="gov-app-item"><div class="gov-app-letter">A</div><div class="gov-app-name">AI Acceptable Use Policy</div><div class="gov-app-sub">Implementation checklist + approval block</div></div>
+<div class="gov-app-item"><div class="gov-app-letter">B</div><div class="gov-app-name">Data Classification Policy</div><div class="gov-app-sub">Version control + SAP data mapping</div></div>
+<div class="gov-app-item"><div class="gov-app-letter">C</div><div class="gov-app-name">Model Validation Policy</div><div class="gov-app-sub">Confidence scoring framework</div></div>
+<div class="gov-app-item"><div class="gov-app-letter">D</div><div class="gov-app-name">Human Oversight Protocol</div><div class="gov-app-sub">Review gate specifications</div></div>
+<div class="gov-app-item"><div class="gov-app-letter">E</div><div class="gov-app-name">Incident Response Plan</div><div class="gov-app-sub">Hallucination detection + escalation</div></div>
+<div class="gov-app-item"><div class="gov-app-letter">F</div><div class="gov-app-name">Vendor AI Assessment</div><div class="gov-app-sub">Third-party AI risk evaluation</div></div>
+</div>
+<p style="font-size:12px;color:var(--t3)">Every policy template includes: implementation checklist, version control headers, approval signature blocks, automation support flags, and GCC regulatory cross-references.</p>
+</div>
+
+<div class="dw-stats" style="margin-top:24px">
+<div><div class="dw-stat-n">15 min</div><div class="dw-stat-l">Not 6 weeks</div></div>
+<div><div class="dw-stat-n">12</div><div class="dw-stat-l">Board pack sections</div></div>
+<div><div class="dw-stat-n">6</div><div class="dw-stat-l">Ready-to-adopt policies</div></div>
+<div><div class="dw-stat-n">5</div><div class="dw-stat-l">GCC regulatory frameworks</div></div>
+<div><div class="dw-stat-n">80+</div><div class="dw-stat-l">Jurisdictions incl. free zones</div></div>
+</div>
+
+<div class="dw-cta">
+<a href="mailto:bhargavperam98@gmail.com?subject=Governance%20Assessment" class="bp">Run your Governance Assessment</a>
+<a href="#pricing" class="bs">See pricing</a>
+</div>
+
+<!-- Loom video spot -->
+<div class="vid-spot">
+<p><strong>Demo video</strong> — Watch a full governance assessment generate all 12 sections in real-time</p>
+<!-- INSTRUCTIONS: Replace the line below with your Loom embed code -->
+<!-- <div style="position:relative;padding-bottom:56.25%;height:0"><iframe src="https://www.loom.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div> -->
+<code>Record Loom → Share → Embed → paste iframe here</code>
+</div>
+
+<p class="dw-ref">Regulatory coverage: UAE PDPL (all articles), CBUAE AI Guidance (Feb 2026), ZATCA Fatoora Phase 2, KSA PDPL (SDAIA), QCB Data Governance. Free zones: DIFC DPR Article 10, ADGM DPR 2021, QFC AI Training Standard, GIFT City. Assessment uses demo data for first run — your real data stays on your machine.</p>
+</div>
+</div></section>
+
+<!-- Deep Workflow: Variance Analysis -->
+<section class="sep" id="variance"><div class="c">
+<span class="tag st">Workflow 01</span>
+<h2 class="sh">Variance Analysis Agent</h2>
+
+<div class="dw">
+<span class="dw-tag dw-tag-green">Live — 2,560 lines deployed</span>
+<h3 class="dw-title">From 45 hours of copy-paste to 5 minutes of intelligence</h3>
+<p class="dw-sub">Every month, your analysts export SAP data, paste it into Excel, manually calculate variances, write commentary, format a report, and email it to the CFO. For one entity. Then repeat 14 more times. Our 3-agent chain does the math in seconds, diagnoses root causes with AI, and writes a board-ready memo — with every number self-validated.</p>
+
+<div class="dw-grid">
+<div class="dw-box"><h4>The problem</h4><p>Manual variance reports miss patterns. A human looking at 200 line items in Excel doesn't see that marketing spend correlates with revenue dips on a 2-month lag. They don't calculate PVME decomposition. They don't cross-validate the EBITDA bridge. They just report numbers.</p></div>
+<div class="dw-box"><h4>Agent 1: Calculator</h4><p>Pure Python math — no AI. 6 variance tables, 10-point self-validation, EBITDA bridge with automatic reconciliation check, 24 data-driven insights across revenue, cost, margin, sensitivity, risk, productivity, and tax. 100% accurate because it's math, not guessing.</p></div>
+<div class="dw-box"><h4>Agent 2: Diagnostician</h4><p>AI-powered (Groq/Llama 3.3 70B) analysis across 10 unique dimensions: Signal Connection, Root Cause Chain, Timing vs Structural, Hidden Risks, Leading/Lagging indicators, Industry Context, Management Quality, Scenario Branching, Questions for Next Meeting, and The One Thing.</p></div>
+<div class="dw-box"><h4>Agent 3: Memo Writer</h4><p>Board-ready 9-section CFO memo using ONLY verified Agent 1 numbers and approved Agent 2 findings. Human Review Gate between Agent 2 and Agent 3 — nothing goes to the board without analyst confirmation. Board Approval workflow (Approve/Revise/Reject) with audit trail.</p></div>
+</div>
+
+<div class="dw-stats">
+<div><div class="dw-stat-n">24</div><div class="dw-stat-l">Python-calculated insights</div></div>
+<div><div class="dw-stat-n">3</div><div class="dw-stat-l">Decision options per analysis</div></div>
+<div><div class="dw-stat-n">5</div><div class="dw-stat-l">Country-specific rule sets</div></div>
+<div><div class="dw-stat-n">13</div><div class="dw-stat-l">Edge cases handled</div></div>
+</div>
+
+<div class="dw-cta">
+<a href="https://pbv-variance-analyzer-a2czhldevwxfkulz7hqf9j.streamlit.app/" target="_blank" class="bp">Try live demo</a>
+<a href="/cdn-cgi/l/email-protection#a0c2c8c1d2c7c1d6d0c5d2c1cd9998e0c7cdc1c9cc8ec3cfcd9fd3d5c2cac5c3d49df6c1d2c9c1cec3c5859290e1cec1ccd9d3c9d3859290e4c5cdcf" class="bs">Request full walkthrough</a>
+</div>
+
+<div class="vid-spot">
+<p><strong>Demo video</strong> — Watch variance analysis run on sample P&L data</p>
+<code>Record Loom → Share → Embed → paste iframe here</code>
+</div>
+
+<p class="dw-ref">Anti-hallucination: hardcoded country rules (UAE/India/KSA/Qatar/UK), pre-built quick wins with SAP T-codes, confidence scoring (CALCULATED/DERIVED/HYPOTHESIS), Python validation of AI math, Review Gate as human-in-the-loop. Architecture inspired by Dell CFO's agent approach — but specialized for GCC mid-market.</p>
+</div>
+</div></section>
+
+<!-- Deep Workflow: Reconciliation -->
+<section class="sep" id="recon"><div class="c">
+<span class="tag st">Workflow 02</span>
+<h2 class="sh">Reconciliation Engine</h2>
+
+<div class="dw">
+<span class="dw-tag dw-tag-green">Live — engine deployed</span>
+<h3 class="dw-title">Close Readiness % — the metric nobody tracks but every CFO needs</h3>
+<p class="dw-sub">Reconciliation consumes 60-70% of your month-end close window. Your team manually matches bank statements to GL, chases intercompany differences across 15 entities, and resolves AP/AR exceptions one by one. Our engine auto-matches 95%+ of transactions, classifies exceptions by materiality, suggests journal entries, and tells you exactly when it's safe to close.</p>
+
+<div class="dw-grid">
+<div class="dw-box"><h4>The problem</h4><p>30-40% of back-office finance cost is reconciliation (McKinsey). MIT/Stanford research shows AI can cut close cycles by 7.5 days. Dell's CFO deployed agents specifically for this. But no mid-market tool gives you a real-time "Close Readiness %" score. Ours does.</p></div>
+<div class="dw-box"><h4>3-layer matching</h4><p>Layer 1: Exact match (reference + amount + date). Layer 2: Fuzzy match (fuzzywuzzy — handles typos, date shifts, partial references, scoring 85%+ threshold). Layer 3: AI exception handling for the 1-5% that algorithms can't resolve. Modern Treasury's approach: deterministic engine handles 99%, AI handles 1%.</p></div>
+<div class="dw-box"><h4>4 reconciliation types</h4><p>Bank Reconciliation (BRS): bank statement vs GL cash book. AP Reconciliation: vendor statements vs GL payables. AR Reconciliation: customer ledger vs GL receivables. Intercompany: IC payables vs IC receivables across entities with currency translation and timing differences.</p></div>
+<div class="dw-box"><h4>The Close Decision</h4><p>Close Readiness % calculated in real-time. HOLD or CLOSE decision with risk score. Fast Close Path showing ordered steps to reach 95%+ readiness. JE suggestions with auto-post for low-risk items and review queue for material exceptions. SAP T-code FB50 integration.</p></div>
+</div>
+
+<div class="dw-stats">
+<div><div class="dw-stat-n">95%+</div><div class="dw-stat-l">Auto-match rate target</div></div>
+<div><div class="dw-stat-n">4</div><div class="dw-stat-l">Reconciliation types</div></div>
+<div><div class="dw-stat-n">621%</div><div class="dw-stat-l">ROI reported by BlackLine</div></div>
+<div><div class="dw-stat-n">7.5 days</div><div class="dw-stat-l">Close reduction (MIT/Stanford)</div></div>
+</div>
+
+<div class="dw-cta">
+<a href="/cdn-cgi/l/email-protection#5e3c363f2c393f282e3b2c3f3367661e39333f3732703d3133612d2b3c343b3d2a630c3b3d31303d3732373f2a3731307b6c6e1a3b3331" class="bp">Request demo</a>
+</div>
+
+<div class="vid-spot">
+<p><strong>Demo video</strong> — Watch bank reconciliation with Close Readiness scoring</p>
+<code>Record Loom → Share → Embed → paste iframe here</code>
+</div>
+
+<p class="dw-ref">Research benchmarks: Dell CFO deploys agents for rec + JEs. HPE achieved 90% manual reduction. BlackLine 621% ROI. Best-in-class auto-match: 95-99%. Engine uses fuzzywuzzy + python-Levenshtein for fuzzy matching. Anonymized data only sent to AI agents — raw transaction data stays local.</p>
+</div>
+</div></section>
+
+<!-- Deep Workflow: Data Foundation -->
+<section class="sep" id="data"><div class="c">
+<span class="tag st">Workflow 00</span>
+<h2 class="sh">Data Foundation &amp; Quality</h2>
+
+<div class="dw">
+<span class="dw-tag dw-tag-blue">Foundation layer</span>
+<h3 class="dw-title">"You're only as good as the data you have" — David Kennedy, CFO Dell</h3>
+<p class="dw-sub">Dell spent 2 years cleaning and standardizing data before deploying a single AI agent. Most companies skip this step and wonder why AI produces garbage. We don't let you skip it. Every engagement starts with a data health check — because an AI agent running on dirty data is worse than no AI at all.</p>
+
+<div class="dw-grid">
+<div class="dw-box"><h4>Why this comes first</h4><p>Garbage in, garbage out. If your chart of accounts isn't standardized, if GL descriptions are inconsistent, if cost centers map differently across entities — no AI agent can produce reliable output. This is Phase 1 of the Dell playbook: clean first, automate second.</p></div>
+<div class="dw-box"><h4>What we check</h4><p>SAP data extraction quality (FAGLL03H, FBL3N, KE30). Header row detection (not always Row 1). Duplicate line item detection. Debit/credit vs single balance format. Mixed P&L and Balance Sheet. GL code consistency across entities. Naming conventions. Currency uniformity.</p></div>
+<div class="dw-box"><h4>Auto-cleaning engine</h4><p>13 edge cases handled automatically: header not in Row 1, debit/credit format, single balance column, multiple periods, missing budget, BS/P&L mixed, duplicates, garbage naming, mixed currency (blocks analysis), unbalanced TB (blocks with override), negative reversals, exceptional items, format detection failure.</p></div>
+<div class="dw-box"><h4>GL intelligence layer</h4><p>SAP GL code mapping using standard ranges (4xxxxx revenue through 9xxxxx). 150+ keyword matching terms across 10 categories. Smart per-account-type sign normalization. Mapping memory saved to JSON — learns your chart of accounts and gets better each month.</p></div>
+</div>
+
+<div class="dw-cta">
+<a href="/cdn-cgi/l/email-protection#1d7f757c6f7a7c6b6d786f7c7024255d7a707c7471337e7270226e687f77787e6920597c697c382f2d55787c716975382f2d5e75787e76" class="bp">Request data health check</a>
+</div>
+
+<p class="dw-ref">This layer is built into every workflow — not sold separately. When you run variance analysis or reconciliation, the data foundation agent runs first automatically. Pure Python, zero AI, 100% accurate. Inspired by Dell CFO's 2-year data standardization initiative before any agent deployment.</p>
+</div>
+</div></section>
+
+<!-- Remaining Workflows -->
+<section class="sep" id="workflows"><div class="c">
+<span class="tag st">Coming next</span>
+<h2 class="sh">The complete roadmap: 10 workflows</h2>
+<p class="sd">Each workflow follows the same 3-agent architecture proven in Variance Analysis: Python math engine (100% accurate) + AI diagnostician + board-ready report writer. Human review gate between every stage.</p>
+<div class="wg">
+<div class="wi"><span class="wn">03</span><div class="wna">Month-End Close</div><div class="ws wsb">BUILDING</div></div>
+<div class="wi"><span class="wn">05</span><div class="wna">Working Capital</div><div class="ws wsb">BUILDING</div></div>
+<div class="wi"><span class="wn">06</span><div class="wna">Board Packs</div><div class="ws wsp">PLANNED</div></div>
+<div class="wi"><span class="wn">07</span><div class="wna">Cash Flow</div><div class="ws wsp">PLANNED</div></div>
+<div class="wi"><span class="wn">08</span><div class="wna">Forecasting</div><div class="ws wsp">PLANNED</div></div>
+<div class="wi"><span class="wn">09</span><div class="wna">Dashboards &amp; Risk</div><div class="ws wsp">PLANNED</div></div>
+<div class="wi"><span class="wn">10</span><div class="wna">Accountability</div><div class="ws wsp">PLANNED</div></div>
+</div>
+</div></section>
+
+<!-- How -->
+<section class="sep" id="how"><div class="c">
+<span class="tag st">How it works</span>
+<h2 class="sh">From stranger to results in 48 hours</h2>
+<p class="sd">No demos. No sales calls. No NDAs. Just send 4 numbers and see what our agents find.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;counter-reset:step">
+<div class="dw" style="padding:28px;counter-increment:step;position:relative"><div style="position:absolute;top:14px;right:18px;font-family:var(--serif);font-size:44px;color:var(--gold);opacity:.15">1</div><h3 style="font-size:16px;font-weight:600;margin-bottom:8px">Send 4 numbers</h3><p style="font-size:13px;color:var(--t2)">Revenue, Receivables, Inventory, Payables. Email them. No login, no signup.</p><span style="display:inline-block;margin-top:10px;font-size:11px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:.5px">2 minutes</span></div>
+<div class="dw" style="padding:28px;counter-increment:step;position:relative"><div style="position:absolute;top:14px;right:18px;font-family:var(--serif);font-size:44px;color:var(--gold);opacity:.15">2</div><h3 style="font-size:16px;font-weight:600;margin-bottom:8px">Agent runs diagnostic</h3><p style="font-size:13px;color:var(--t2)">Variance + working capital agents analyze against industry benchmarks. Pure math first, AI insights second.</p><span style="display:inline-block;margin-top:10px;font-size:11px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:.5px">24 hours</span></div>
+<div class="dw" style="padding:28px;counter-increment:step;position:relative"><div style="position:absolute;top:14px;right:18px;font-family:var(--serif);font-size:44px;color:var(--gold);opacity:.15">3</div><h3 style="font-size:16px;font-weight:600;margin-bottom:8px">Review your report</h3><p style="font-size:13px;color:var(--t2)">Board-ready diagnostic showing where cash is stuck and what to do. Numbers and actions, not buzzwords.</p><span style="display:inline-block;margin-top:10px;font-size:11px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:.5px">15-min call</span></div>
+<div class="dw" style="padding:28px;counter-increment:step;position:relative"><div style="position:absolute;top:14px;right:18px;font-family:var(--serif);font-size:44px;color:var(--gold);opacity:.15">4</div><h3 style="font-size:16px;font-weight:600;margin-bottom:8px">Decide what's next</h3><p style="font-size:13px;color:var(--t2)">If diagnostic found value — scope a project. If not — free CFO-level analysis. No obligations either way.</p><span style="display:inline-block;margin-top:10px;font-size:11px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:.5px">Your pace</span></div>
+</div>
+</div></section>
+
+<!-- Pricing -->
+<section class="sep" id="pricing"><div class="c">
+<span class="tag st">Pricing</span>
+<h2 class="sh">Transparent. No surprises.</h2>
+<p class="sd">90% less than Big 4. Working agents — not consulting decks. Your ROI is measurable from day one.</p>
+<div class="pg">
+<div class="pc">
+<div class="pt">Free</div>
+<div class="pa">$0</div>
+<div class="pp">24-hour diagnostic</div>
+<ul class="pf">
+<li>Send 4 numbers, get AI analysis</li>
+<li>Working capital red flags</li>
+<li>Variance insights identified</li>
+<li>Board-ready summary</li>
+</ul>
+<a href="/cdn-cgi/l/email-protection#d7b5bfb6a5b0b6a1a7b2a5b6baeeef97b0bab6bebbf9b4b8bae8a4a2b5bdb2b4a3ea91a5b2b2f2e5e793beb6b0b9b8a4a3beb4f1b5b8b3aeea85b2a1b2b9a2b2edf2e79685b2b4b2bea1b6b5bbb2a4edf2e7969eb9a1b2b9a3b8a5aeedf2e79687b6aeb6b5bbb2a4ed" class="pb pbo">Send 4 numbers</a>
+</div>
+<div class="pc ft">
+<div class="pt">Governance assessment</div>
+<div class="pa">$2,500</div>
+<div class="pp">One-time + automation roadmap</div>
+<ul class="pf">
+<li>12-section board-ready governance pack</li>
+<li>Executive summary with ROI calculation</li>
+<li>Risk register with financial exposure</li>
+<li>5 GCC regulatory compliance matrix</li>
+<li>Governance Gates report card (3 gates)</li>
+<li>RACI matrix + 72-hour action plan</li>
+<li>30-60-90 day roadmap with milestones</li>
+<li>6 policy templates with checklists</li>
+<li>Automation pipeline to all 10 workflows</li>
+<li>Data health check included</li>
+</ul>
+<a href="/cdn-cgi/l/email-protection#086a60697a6f697e786d7a69653130486f65696164266b6765377b7d6a626d6b7c354f677e6d7a6669666b6d2d3a38497b7b6d7b7b656d667c" class="pb pbp">Start assessment</a>
+</div>
+<div class="pc">
+<div class="pt">Monthly retainer</div>
+<div class="pa">$3,000</div>
+<div class="pp">per month · 6-month minimum</div>
+<ul class="pf">
+<li>All active workflows running monthly</li>
+<li>Variance + reconciliation per entity</li>
+<li>Governance compliance monitoring</li>
+<li>Data quality monitoring</li>
+<li>Monthly CFO strategy call</li>
+<li>Priority support</li>
+</ul>
+<a href="/cdn-cgi/l/email-protection#5f3d373e2d383e292f3a2d3e3266671f38323e3633713c3032602c2a3d353a3c2b620d3a2b3e36313a2d7a6d6f16312e2a362d26" class="pb pbo">Let's talk</a>
+</div>
+</div>
+<div class="cb">
+<div class="cc"><h4>Big 4 Firm</h4><div class="cp">$75,000+</div><div class="cn">6-8 weeks · consulting deck</div></div>
+<div class="cc"><h4>Generic AI tool</h4><div class="cp">$25,000</div><div class="cn">US-focused · no SAP depth</div></div>
+<div class="cc cy"><h4>PBV Finance</h4><div class="cp">$2,500</div><div class="cn">15 min · working agents · GCC-native</div></div>
+</div>
+</div></section>
+
+<!-- Diff -->
+<section class="sep"><div class="c">
+<span class="tag st">Why us</span>
+<h2 class="sh">What makes this different</h2>
+<p class="sd">We cite article numbers because we've read the laws. Most consultants cite framework names because they've read the brochures.</p>
+<div class="dg">
+<div class="di"><div class="dm">S</div><div><h3>SAP-native architecture</h3><p>GL code mapping (4xxxxx-9xxxxx), T-code integration, authorization objects, ACDOCA logging. Built for FICO from day one — not a generic tool retrofitted for ERP.</p></div></div>
+<div class="di"><div class="dm">P</div><div><h3>Privacy by design</h3><p>Agent 1 runs pure Python locally. Only anonymized analysis reaches AI. Every output tagged with confidence levels. Option for 100% offline with local models (Gemma 4, zero internet).</p></div></div>
+<div class="di"><div class="dm">G</div><div><h3>GCC regulatory depth</h3><p>UAE PDPL, CBUAE, ZATCA, KSA PDPL, QCB — article-level specificity. DIFC, ADGM, QFC, GIFT City free zone coverage. Not checkbox compliance — actual regulatory mapping.</p></div></div>
+<div class="di"><div class="dm">D</div><div><h3>Data foundation first</h3><p>Following Dell CFO's playbook: clean data before AI. 13 edge cases auto-handled. GL intelligence with 150+ keyword mapping. Mapping memory that learns your chart of accounts.</p></div></div>
+</div>
+</div></section>
+
+<!-- About -->
+<section class="sep" id="about"><div class="c">
+<span class="tag st">About</span>
+<h2 class="sh">Built by a practicing FP&A leader.<br>Not a software company.</h2>
+<div class="ac">
+<div>
+<p>PBV Finance is founded by Bhargav Venkatesh — a Senior Financial Analyst with 9+ years across India, UAE, KSA, Qatar, and UK. Currently managing 15+ SAP FICO entities at a GCC commodity trading group.</p>
+<p>Every workflow exists because of real month-end pain. The variance analyzer was built because 15 entities took 45 hours manually. The reconciliation engine was built because 60% of close time was wasted on matching. The governance suite was built because no affordable tool addressed GCC-specific AI regulations at article level.</p>
+<p>This is finance automated by a practitioner who does this work every single day — not AI applied to finance by technologists guessing what CFOs need.</p>
+<div class="cg">
+<span class="cb2">CMA</span><span class="cb2">FMVA</span><span class="cb2">BIDA</span><span class="cb2">SAP FICO</span><span class="cb2">Power BI</span>
+</div>
+</div>
+<div class="as">
+<div class="asi"><div class="asn">9+</div><div class="asl">Years in FP&A</div></div>
+<div class="asi"><div class="asn">15+</div><div class="asl">SAP entities managed daily</div></div>
+<div class="asi"><div class="asn">5</div><div class="asl">Countries operated in</div></div>
+<div class="asi"><div class="asn">9,300+</div><div class="asl">LinkedIn followers</div></div>
+</div>
+</div>
+</div></section>
+
+<!-- CTA -->
+<section class="cta"><div class="c" style="position:relative">
+<h2>Send 4 numbers.<br><span class="gold">Know in 24 hours.</span></h2>
+<p>Revenue. Receivables. Inventory. Payables.<br>Free. No strings. No signup.</p>
+<div class="cd">
+<a href="/cdn-cgi/l/email-protection#fa98929b889d9b8c8a9f889b97c3c2ba9d979b9396d4999597c5898f98909f998ec7bd958c9f88949b94999fdfc8cabb89899f8989979f948e" class="b
